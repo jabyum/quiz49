@@ -25,9 +25,9 @@ async def test_body(header: str = Body(...),
 # пример пост запроса
 @app.post("/home")
 async def first_post(name: str, phone_number: int):
-    return {name:phone_number}
+    return {name: phone_number}
 @app.delete("/home")
 async def first_delete(name: str, phone_number: int):
-    return {name:phone_number}
+    return {name: phone_number}
 # запуск проекта через терминал uvicorn main:app --reload
 

@@ -2,3 +2,4 @@ fastapi
 requests
 telebot
 uvicorn
+sqlalchemy
