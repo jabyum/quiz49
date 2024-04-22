@@ -10,3 +10,15 @@ SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base()
 
 # создание сессий
+def get_db():
+    db = SessionLocal()
+    try:
+        # пробуем подключиться к базе данных
+        yield db
+    except Exception:
+        # если не получается откатываем до рабочего состояния
+        db.rollback()
+        raise
+    finally:
+        # при любом срабатывании except закрываем сессию
+        db.close()
