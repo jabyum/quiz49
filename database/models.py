@@ -16,6 +16,7 @@ class Questions(Base):
     id = Column(Integer, autoincrement=True, primary_key=True)
     q_text = Column(String, nullable=False)
     answer = Column(Integer, nullable=False)
+    level = Column(String, nullable=False, default="easy")
     v1 = Column(String, nullable=False)
     v2 = Column(String, nullable=False)
     v3 = Column(String, nullable=True)

@@ -1,6 +1,9 @@
 from fastapi import FastAPI, Body
 from api.test_process_api.test_process import test_router
 from api.users_api.users import user_router
+from database import Base, engine
+# создаем подключение к бд
+Base.metadata.create_all(bind=engine)
 # создание объекта
 app = FastAPI(docs_url="/")
 # регистрация роутеров
